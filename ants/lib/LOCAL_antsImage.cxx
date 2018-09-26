@@ -274,6 +274,9 @@ PYBIND11_MODULE(antsImage, m) {
     m.def("toNumpyUI2",  &toNumpy<itk::Image<unsigned int,2>>);
     m.def("toNumpyUI3",  &toNumpy<itk::Image<unsigned int,3>>);
     m.def("toNumpyUI4",  &toNumpy<itk::Image<unsigned int,4>>);
+    m.def("toNumpyS2",   &toNumpy<itk::Image<short,2>>);
+    m.def("toNumpyS3",   &toNumpy<itk::Image<short,3>>);
+    m.def("toNumpyS4",   &toNumpy<itk::Image<short,4>>);
     m.def("toNumpyF2",   &toNumpy<itk::Image<float,2>>);
     m.def("toNumpyF3",   &toNumpy<itk::Image<float,3>>);
     m.def("toNumpyF4",   &toNumpy<itk::Image<float,4>>);

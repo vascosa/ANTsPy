@@ -26,13 +26,12 @@ from .. import utils
 from .. import registration as reg
 
 _supported_pclasses = {'scalar', 'vector', 'rgb', 'rgba'}
-_supported_ptypes = {'unsigned char', 'unsigned int', 'float', 'double'}
-_supported_ntypes = {'uint8', 'uint32', 'float32', 'float64'}
-_unsupported_ptypes = {'char', 'unsigned short', 'short', 'int'}
+_supported_ptypes = {'unsigned char', 'unsigned int', 'short', 'float', 'double'}
+_supported_ntypes = {'uint8', 'uint32', 'float16', 'float32', 'float64'}
+_unsupported_ptypes = {'char', 'unsigned short', 'int'}
 _unsupported_ptype_map = {
     'char': 'float',
     'unsigned short': 'unsigned int',
-    'short': 'float',
     'int': 'float',
 }
 _image_type_map = {
@@ -44,6 +43,7 @@ _image_type_map = {
 _ptype_type_map = {
     'unsigned char': 'UC',
     'unsigned int': 'UI',
+    'short': 'S',
     'float': 'F',
     'double': 'D'
 }
@@ -51,12 +51,14 @@ _ptype_type_map = {
 _ntype_type_map = {
     'uint8': 'UC',
     'uint32': 'UI',
+    'float16': 'S',
     'float32': 'F',
     'float64': 'D'
 }
 _npy_to_itk_map = {
     'uint8': 'unsigned char',
     'uint32':'unsigned int',
+    'float16': 'short',
     'float32': 'float',
     'float64': 'double'}
 

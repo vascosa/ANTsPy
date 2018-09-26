@@ -28,16 +28,18 @@ from .. import utils, registration, segmentation, viz
 from . import ants_image_io as iio2
 
 
-_supported_ptypes = {'unsigned char', 'unsigned int', 'float', 'double'}
-_supported_dtypes = {'uint8', 'uint32', 'float32', 'float64'}
+_supported_ptypes = {'unsigned char', 'unsigned int', 'short', 'float', 'double'}
+_supported_dtypes = {'uint8', 'uint32', 'float16', 'float32', 'float64'}
 _itk_to_npy_map = {
     'unsigned char': 'uint8',
     'unsigned int': 'uint32',
+    'short': 'float16',
     'float': 'float32',
     'double': 'float64'}
 _npy_to_itk_map = {
     'uint8': 'unsigned char',
-    'uint32':'unsigned int',
+    'uint32': 'unsigned int',
+    'float16': 'short',
     'float32': 'float',
     'float64': 'double'}
 
